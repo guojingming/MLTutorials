@@ -13,8 +13,6 @@ trainingSet = (
     (106, 100)
 )
 
-
-
-SingleVarLR.Svlr sv(trainingSet);
-sv.train(trainingSet)
+sv = SingleVarLR.Svlr(trainingSet)
+sv.train()
 print(sv.predict(180))
