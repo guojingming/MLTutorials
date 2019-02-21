@@ -1,11 +1,15 @@
 import sympy as sy
 
 class ID3:
-    def __init__(self, oriTrainingSet):
+    def __init__(self, oriTrainingSet, featureBeginIndex, featureEndIndex, resIndex):
         self.preprocess(oriTrainingSet)
-        entropRes = self.__entrop_allfeatures_calculate(oriTrainingSet, 1, 4, 5)
-        
+        entrop = self.__entrop_calculate(oriTrainingSet, resIndex)
+        entropRes = self.__entrop_allfeatures_calculate(oriTrainingSet, featureBeginIndex, featureEndIndex, resIndex)
+        I = self.__I_calculate(entrop, entropRes)
+
+        print(entrop)
         print(entropRes)
+        print(I)
 
     def preprocess(self, oriTrainingSet):
         for dataItem in oriTrainingSet:
@@ -48,6 +52,25 @@ class ID3:
             else:
                 dataItem[5] = 2
 
+    def __I_calculate(self, entrop, entropFeatures):
+        res = []
+        for entropFeature in entropFeatures:
+            res.append(entrop - entropFeature)
+        return res
+
+    def __entrop_calculate(self, dataSet, resIndex):
+        dataSumCount = dataSet.__len__()
+        resCount = {}
+        entrop = 0
+        for dataItem in dataSet:
+            if dataItem[resIndex] in resCount:
+                resCount[dataItem[resIndex]] += 1
+            else:
+                resCount[dataItem[resIndex]] = 1
+        for countIndex in resCount:
+            entrop = entrop - (resCount[countIndex] / dataSumCount * sy.log(resCount[countIndex] / dataSumCount, 2))
+        return entrop
+
     def __entrop_allfeatures_calculate(self, dataSet, featureBeginIndex, featureEndIndex, resIndex):
         entropRes = []
         for i in range(featureBeginIndex, featureEndIndex + 1):
@@ -81,7 +104,7 @@ class ID3:
                 pResult.append(featureCountMap[features][resCount])
             featurnP = 0
             for res in pResult:
-                featurnP = featurnP - (res / featureSumCount * sy.log(res / featureSumCount))
+                featurnP = featurnP - (res / featureSumCount * sy.log(res / featureSumCount, 2))
             entropRes = entropRes + p * featurnP
         return entropRes
 
@@ -105,5 +128,4 @@ oriTrainingSet = [
         [14,	"Rainy",    "Mild",	    "High",	    "Strong",	"No"]
     ]
 
-print(1/2)
-id3 = ID3(oriTrainingSet)
+id3 = ID3(oriTrainingSet, 1, 4, 5)
