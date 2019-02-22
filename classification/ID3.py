@@ -1,17 +1,33 @@
 import sympy as sy
 
+#Failures of ID3
+#1. Can not process discrete features
+#2. When choose divide featrue, tend to choose the feature which has more values
+#3. Can not process the data whose rows loss some features
+
+#C4.5 improved method
+#1. Divide continuous feature's value by numerical interval
+#2. Introducing characteristic entropy H, I' = I / H, the H of the feature which has more values will be bigger, which make I' smaller
+#3. 
+
+
 class ID3:
     def __init__(self, oriTrainingSet, featureBeginIndex, featureEndIndex, resIndex):
-        self.preprocess(oriTrainingSet)
+        self.__preprocess(oriTrainingSet)
         entrop = self.__entrop_calculate(oriTrainingSet, resIndex)
         entropRes = self.__entrop_allfeatures_calculate(oriTrainingSet, featureBeginIndex, featureEndIndex, resIndex)
         I = self.__I_calculate(entrop, entropRes)
+
+        #newDataSet = 
 
         print(entrop)
         print(entropRes)
         print(I)
 
-    def preprocess(self, oriTrainingSet):
+    #def __devide_dataset(self, dataSet, featureIndex):
+
+
+    def __preprocess(self, oriTrainingSet):
         for dataItem in oriTrainingSet:
             if dataItem[1] == "Sunny":
                 dataItem[1] = 0
