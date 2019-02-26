@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9874cdfb-cc4d-4d27-a33e-91070319589f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CNN/LeNet5/LeNet5_mnist_predict.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CNN/LeNet5/LeNet5_mnist_train.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CNN/Test/ReadModel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CNN/Test/SaveModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CNN/CNNMinist.py" beforeDir="false" afterPath="$PROJECT_DIR$/CNN/Test/CNNMinist.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CNN/LeNet5/LeNet5_mnist_predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/CNN/LeNet5/LeNet5_mnist_predict.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CNN/LeNet5/LeNet5_mnist_train.py" beforeDir="false" afterPath="$PROJECT_DIR$/CNN/LeNet5/LeNet5_mnist_train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CNN/LeNet5/checkpoint_dir/checkpoint" beforeDir="false" afterPath="$PROJECT_DIR$/CNN/LeNet5/checkpoint_dir/checkpoint" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,10 +14,10 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/MLTutorials$ReadModel.coverage" NAME="ReadModel Coverage Results" MODIFIED="1551084898696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CNN/Test" />
-    <SUITE FILE_PATH="coverage/MLTutorials$LeNet5_mnist_train.coverage" NAME="LeNet5_mnist_train Coverage Results" MODIFIED="1551087899018" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CNN/LeNet5" />
+    <SUITE FILE_PATH="coverage/MLTutorials$LeNet5_mnist_train.coverage" NAME="LeNet5_mnist_train Coverage Results" MODIFIED="1551089423753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CNN/LeNet5" />
     <SUITE FILE_PATH="coverage/MLTutorials$test.coverage" NAME="LeNet5_mnist_train Coverage Results" MODIFIED="1551076597857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CNN" />
     <SUITE FILE_PATH="coverage/MLTutorials$SavemodelTest.coverage" NAME="SaveModel Coverage Results" MODIFIED="1551084583574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CNN/Test" />
-    <SUITE FILE_PATH="coverage/MLTutorials$LeNet5_mnist_predict.coverage" NAME="LeNet5_mnist_predict Coverage Results" MODIFIED="1551088045537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CNN/LeNet5" />
+    <SUITE FILE_PATH="coverage/MLTutorials$LeNet5_mnist_predict.coverage" NAME="LeNet5_mnist_predict Coverage Results" MODIFIED="1551089779372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CNN/LeNet5" />
     <SUITE FILE_PATH="coverage/MLTutorials$CNNMinist.coverage" NAME="CNNMinist Coverage Results" MODIFIED="1550827398216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CNN" />
   </component>
   <component name="FileEditorManager">
@@ -28,8 +25,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CNN/LeNet5/LeNet5_mnist_train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="634">
-              <caret line="92" column="14" lean-forward="true" selection-start-line="92" selection-start-column="14" selection-end-line="92" selection-end-column="14" />
+            <state relative-caret-position="448">
+              <caret line="26" column="7" selection-start-line="26" selection-end-line="26" selection-end-column="7" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -40,8 +37,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CNN/LeNet5/LeNet5_mnist_predict.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+            <state relative-caret-position="595">
+              <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -73,8 +70,8 @@
         <option value="$PROJECT_DIR$/CNN/Test/SavemodelTest.py" />
         <option value="$PROJECT_DIR$/CNN/Test/SaveModel.py" />
         <option value="$PROJECT_DIR$/CNN/Test/ReadModel.py" />
-        <option value="$PROJECT_DIR$/CNN/LeNet5/LeNet5_mnist_train.py" />
         <option value="$PROJECT_DIR$/CNN/LeNet5/LeNet5_mnist_predict.py" />
+        <option value="$PROJECT_DIR$/CNN/LeNet5/LeNet5_mnist_train.py" />
       </list>
     </option>
   </component>
@@ -96,23 +93,6 @@
             <path>
               <item name="MLTutorials" type="b2602c69:ProjectViewProjectNode" />
               <item name="MLTutorials" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MLTutorials" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MLTutorials" type="462c0819:PsiDirectoryNode" />
-              <item name="CNN" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MLTutorials" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MLTutorials" type="462c0819:PsiDirectoryNode" />
-              <item name="CNN" type="462c0819:PsiDirectoryNode" />
-              <item name="LeNet5" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MLTutorials" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MLTutorials" type="462c0819:PsiDirectoryNode" />
-              <item name="CNN" type="462c0819:PsiDirectoryNode" />
-              <item name="Test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -260,12 +240,12 @@
       <workItem from="1550976997495" duration="60000" />
       <workItem from="1550977083430" duration="9730000" />
       <workItem from="1551058811170" duration="12693000" />
-      <workItem from="1551076774503" duration="11201000" />
+      <workItem from="1551076774503" duration="13811000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47142000" />
+    <option name="totallyTimeSpent" value="49752000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="767" y="275" width="3001" height="1832" extended-state="0" />
@@ -452,8 +432,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CNN/LeNet5/LeNet5_mnist_train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="634">
-          <caret line="92" column="14" lean-forward="true" selection-start-line="92" selection-start-column="14" selection-end-line="92" selection-end-column="14" />
+        <state relative-caret-position="448">
+          <caret line="26" column="7" selection-start-line="26" selection-end-line="26" selection-end-column="7" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
@@ -462,8 +442,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CNN/LeNet5/LeNet5_mnist_predict.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+        <state relative-caret-position="595">
+          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>

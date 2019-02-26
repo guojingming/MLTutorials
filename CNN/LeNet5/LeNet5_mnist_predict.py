@@ -5,7 +5,7 @@ import numpy as np
 import scipy.misc
 import cv2
 
-epoch_count = 20000
+epoch_count = 40000
 
 saver = tf.train.import_meta_graph("./checkpoint_dir/mnist_model{0}.meta".format(epoch_count))
 
@@ -33,12 +33,11 @@ for i in range(0, pic_count):
     #img = batch[0].reshape((28, 28))
 
     img = cv2.imread("./mnist_train_pic/out{0}.bmp".format(i), cv2.IMREAD_GRAYSCALE)
-    cv2.imshow("Picture", img)
     array = np.array(img)
-
     #scipy.misc.imsave("./mnist_train_pic/out{0}.bmp".format(i), img)
     feed_dict = {input_x: array.reshape(1, 784)}
     res_array = sess.run(predict_op, feed_dict)[0].tolist()
     predict_result = res_array.index(max(res_array));
+    cv2.imshow("Picture", img)
     print("Result: {0}".format(predict_result))
     cv2.waitKey(0)

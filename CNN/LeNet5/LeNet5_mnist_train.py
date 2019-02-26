@@ -24,7 +24,7 @@ input_vec = tf.reshape(input_x, [-1, 28, 28, 1])
 conv1_w = gen_weights([5, 5, 1, 6])
 conv1_b = gen_bias([6])
 
-h_conv1 = tf.nn.sigmoid(conv_2d(input_vec, conv1_w, "VALID") + conv1_b)
+h_conv1 = tf.nn.sigmoid(conv_2d(input_vec, conv1_w, "SAME") + conv1_b)
 h_pool1 = max_pool_2x2(h_conv1, "SAME")
 
 conv2_w = gen_weights([5, 5, 6, 16])
@@ -33,7 +33,7 @@ conv2_b = gen_bias([16])
 h_conv2 = tf.nn.sigmoid(conv_2d(h_pool1, conv2_w, "VALID") + conv2_b)
 h_pool2 = max_pool_2x2(h_conv2, "SAME")
 
-conv3_w = gen_weights([4, 4, 16, 120])
+conv3_w = gen_weights([5, 5, 16, 120])
 conv3_b = gen_bias([120])
 
 h_conv2 = tf.nn.sigmoid(conv_2d(h_pool2, conv3_w, "VALID") + conv3_b)
@@ -70,7 +70,7 @@ sess.run(tf.initialize_all_variables())
 
 saver = tf.train.Saver()
 
-epoch_count = 20000
+epoch_count = 40000
 
 for i in range(epoch_count):
     batch = mnist.train.next_batch(50)
