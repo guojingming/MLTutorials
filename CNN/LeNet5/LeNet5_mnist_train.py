@@ -70,7 +70,7 @@ sess.run(tf.initialize_all_variables())
 
 saver = tf.train.Saver()
 
-epoch_count = 40000
+epoch_count = 80000
 
 for i in range(epoch_count):
     batch = mnist.train.next_batch(50)
