@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9874cdfb-cc4d-4d27-a33e-91070319589f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Tutorials/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tutorials/kittibinvisualizer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tutorials/transkittipoint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MLTutorials.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MLTutorials.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tutorials/transhdl32epoint.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CNN/LeNet5/LeNet5_mnist_predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/CNN/LeNet5/LeNet5_mnist_predict.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tutorials/transkittipoint.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tutorials/transkittipoint.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,57 +14,48 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/MLTutorials$COCO_processer.coverage" NAME="COCO_processer Coverage Results" MODIFIED="1552030660780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CNN/VGG16" />
+    <SUITE FILE_PATH="coverage/MLTutorials$COCO_processer.coverage" NAME="COCO_processer Coverage Results" MODIFIED="1555489620366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CNN/VGG16" />
     <SUITE FILE_PATH="coverage/MLTutorials$ReadModel.coverage" NAME="ReadModel Coverage Results" MODIFIED="1551084898696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CNN/Test" />
     <SUITE FILE_PATH="coverage/MLTutorials$VGG16_coco_train.coverage" NAME="VGG16_coco_train Coverage Results" MODIFIED="1551154722420" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CNN/VGG16" />
     <SUITE FILE_PATH="coverage/MLTutorials$kittibinvisualizer.coverage" NAME="kittibinvisualizer Coverage Results" MODIFIED="1554084881902" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MLTutorials$LeNet5_mnist_train.coverage" NAME="LeNet5_mnist_train Coverage Results" MODIFIED="1553133745482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CNN/LeNet5" />
+    <SUITE FILE_PATH="coverage/MLTutorials$LeNet5_mnist_train.coverage" NAME="LeNet5_mnist_train Coverage Results" MODIFIED="1555485576797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CNN/LeNet5" />
     <SUITE FILE_PATH="coverage/MLTutorials$test.coverage" NAME="LeNet5_mnist_train Coverage Results" MODIFIED="1551076597857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CNN" />
     <SUITE FILE_PATH="coverage/MLTutorials$SavemodelTest.coverage" NAME="SaveModel Coverage Results" MODIFIED="1551084583574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CNN/Test" />
-    <SUITE FILE_PATH="coverage/MLTutorials$LeNet5_mnist_predict.coverage" NAME="LeNet5_mnist_predict Coverage Results" MODIFIED="1553068397359" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CNN/LeNet5" />
-    <SUITE FILE_PATH="coverage/MLTutorials$Transkittipoint.coverage" NAME="Transkittipoint Coverage Results" MODIFIED="1554088311354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/MLTutorials$LeNet5_mnist_predict.coverage" NAME="LeNet5_mnist_predict Coverage Results" MODIFIED="1555489305787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CNN/LeNet5" />
+    <SUITE FILE_PATH="coverage/MLTutorials$Transkittipoint.coverage" NAME="Transkittipoint Coverage Results" MODIFIED="1555556684989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/MLTutorials$CNNMinist.coverage" NAME="CNNMinist Coverage Results" MODIFIED="1553670733568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CNN/Test" />
+    <SUITE FILE_PATH="coverage/MLTutorials$transhdl32epoint.coverage" NAME="transhdl32epoint Coverage Results" MODIFIED="1555553270787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Tutorials/transkittipoint.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="88" selection-start-line="88" selection-end-line="88" />
+            <state relative-caret-position="608">
+              <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+                <element signature="e#758#2167#0" />
+                <element signature="e#2202#2222#0" />
+                <element signature="e#2257#3428#0" />
+                <element signature="e#3695#3961#0" />
+                <element signature="e#5019#6598#0" />
+                <element signature="e#6638#7272#0" />
+                <element signature="e#7310#8626#0" />
+                <element signature="e#8674#10661#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tutorials/transhdl32epoint.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="832">
+              <caret line="26" column="17" lean-forward="true" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tutorials/kittibinvisualizer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="860">
-              <caret line="42" column="21" lean-forward="true" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.local/lib/python3.5/site-packages/matplotlib/cm.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="181" selection-start-line="181" selection-end-line="181" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -106,19 +96,20 @@
         <option value="$PROJECT_DIR$/CNN/VGG16/coco_processer.py" />
         <option value="$PROJECT_DIR$/CNN/VGG16/COCO_processer.py" />
         <option value="$PROJECT_DIR$/CNN/VGG16/VGG16_model.py" />
-        <option value="$PROJECT_DIR$/CNN/LeNet5/LeNet5_mnist_predict.py" />
         <option value="$PROJECT_DIR$/CNN/LeNet5/LeNet5_mnist_train.py" />
         <option value="$PROJECT_DIR$/Tutorials/utils.py" />
         <option value="$PROJECT_DIR$/Tutorials/config.py" />
         <option value="$PROJECT_DIR$/Tutorials/kittibinvisualizer.py" />
         <option value="$PROJECT_DIR$/Tutorials/transkittipoint.py" />
+        <option value="$PROJECT_DIR$/CNN/LeNet5/LeNet5_mnist_predict.py" />
+        <option value="$PROJECT_DIR$/Tutorials/transhdl32epoint.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1204" />
+    <option name="x" value="1306" />
     <option name="y" value="42" />
-    <option name="width" value="2615" />
+    <option name="width" value="2357" />
     <option name="height" value="2118" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -129,6 +120,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -139,29 +131,17 @@
             <path>
               <item name="MLTutorials" type="b2602c69:ProjectViewProjectNode" />
               <item name="MLTutorials" type="462c0819:PsiDirectoryNode" />
-              <item name="CNN" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MLTutorials" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MLTutorials" type="462c0819:PsiDirectoryNode" />
-              <item name="CNN" type="462c0819:PsiDirectoryNode" />
-              <item name="LeNet5" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MLTutorials" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MLTutorials" type="462c0819:PsiDirectoryNode" />
               <item name="Tutorials" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Tutorials/kittibinvisualizer.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Tutorials/transhdl32epoint.py" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
@@ -391,6 +371,9 @@
       <module name="MLTutorials" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="/usr/bin/python3.5" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
@@ -406,9 +389,29 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="transhdl32epoint" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="MLTutorials" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="/usr/bin/python3.5" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tutorials/transhdl32epoint.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.kittibinvisualizer" />
       <item itemvalue="Python.Transkittipoint" />
+      <item itemvalue="Python.transhdl32epoint" />
       <item itemvalue="Python.CNNMinist" />
       <item itemvalue="Python.COCO_processer" />
       <item itemvalue="Python.VGG16_model" />
@@ -446,18 +449,25 @@
       <workItem from="1553996354411" duration="9548000" />
       <workItem from="1554015544759" duration="9714000" />
       <workItem from="1554082924127" duration="6474000" />
+      <workItem from="1554191162976" duration="4747000" />
+      <workItem from="1554255457749" duration="17882000" />
+      <workItem from="1554341859595" duration="11162000" />
+      <workItem from="1555383632859" duration="637000" />
+      <workItem from="1555466846567" duration="3631000" />
+      <workItem from="1555490229086" duration="2826000" />
+      <workItem from="1555551076567" duration="5556000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139112000" />
+    <option name="totallyTimeSpent" value="185553000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1204" y="42" width="2615" height="2118" extended-state="0" />
+    <frame x="1306" y="42" width="2357" height="2118" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4942113" visible="true" weight="0.16725838" />
-      <window_info id="Structure" order="1" sideWeight="0.5057887" side_tool="true" visible="true" weight="0.16725838" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48914617" visible="true" weight="0.16864295" />
+      <window_info id="Structure" order="1" sideWeight="0.5108538" side_tool="true" visible="true" weight="0.16864295" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32939714" />
@@ -475,9 +485,9 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" sideWeight="0.49645948" visible="true" weight="0.32189348" />
+      <window_info anchor="right" id="SciView" order="3" sideWeight="0.49204051" visible="true" weight="0.16688626" />
       <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" x="0" y="0" width="563" height="1918" id="Documentation" order="5" sideWeight="0.5035405" side_tool="true" weight="0.27495068" />
+      <window_info anchor="right" x="0" y="0" width="563" height="1918" id="Documentation" order="5" sideWeight="0.5079595" side_tool="true" visible="true" weight="0.16688626" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25326592" />
@@ -510,11 +520,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/CNN/LeNet5/LeNet5_mnist_predict.py</url>
-          <line>9</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Tutorials/kittibinvisualizer.py</url>
           <line>16</line>
           <option name="timeStamp" value="17" />
@@ -525,9 +530,9 @@
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Tutorials/transkittipoint.py</url>
-          <line>88</line>
-          <option name="timeStamp" value="20" />
+          <url>file://$PROJECT_DIR$/Tutorials/transhdl32epoint.py</url>
+          <line>38</line>
+          <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -655,16 +660,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CNN/LeNet5/LeNet5_mnist_predict.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="37" column="13" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2018.3/system/python_stubs/-1247971764/cv2/cv2/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -683,23 +678,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10240">
           <caret line="320" selection-start-line="320" selection-end-line="320" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CNN/VGG16/VGG16_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4256">
-          <caret line="133" column="24" selection-start-line="133" selection-start-column="24" selection-end-line="133" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CNN/VGG16/COCO_processer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -738,20 +716,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CNN/LeNet5/LeNet5_mnist_train.py">
+    <entry file="file://$PROJECT_DIR$/Tutorials/kittibinvisualizer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="5" column="72" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="72" />
+        <state relative-caret-position="1184">
+          <caret line="42" column="21" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/lib/python3/dist-packages/apport_python_hook.py">
+    <entry file="file://$USER_HOME$/.local/lib/python3.5/site-packages/matplotlib/cm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="686">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
+        <state relative-caret-position="5504">
+          <caret line="181" selection-start-line="181" selection-end-line="181" />
         </state>
       </provider>
     </entry>
@@ -762,29 +740,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.local/lib/python3.5/site-packages/matplotlib/cm.py">
+    <entry file="file://$PROJECT_DIR$/CNN/LeNet5/LeNet5_mnist_train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="181" selection-start-line="181" selection-end-line="181" />
+        <state relative-caret-position="1696">
+          <caret line="53" column="33" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tutorials/kittibinvisualizer.py">
+    <entry file="file://$PROJECT_DIR$/CNN/VGG16/VGG16_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="860">
-          <caret line="42" column="21" lean-forward="true" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
+        <state relative-caret-position="4256">
+          <caret line="133" column="24" selection-start-line="133" selection-start-column="24" selection-end-line="133" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CNN/VGG16/COCO_processer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="13" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CNN/LeNet5/LeNet5_mnist_predict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="19" column="10" selection-start-line="19" selection-end-line="19" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3/dist-packages/apport_python_hook.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="878">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tutorials/transhdl32epoint.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="832">
+          <caret line="26" column="17" lean-forward="true" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Tutorials/transkittipoint.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="88" selection-start-line="88" selection-end-line="88" />
+        <state relative-caret-position="608">
+          <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#758#2167#0" />
+            <element signature="e#2202#2222#0" />
+            <element signature="e#2257#3428#0" />
+            <element signature="e#3695#3961#0" />
+            <element signature="e#5019#6598#0" />
+            <element signature="e#6638#7272#0" />
+            <element signature="e#7310#8626#0" />
+            <element signature="e#8674#10661#0" />
           </folding>
         </state>
       </provider>

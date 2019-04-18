@@ -104,16 +104,8 @@ def angle_in_limit(angle):
         angle = np.pi / 2
     return angle
 
-def point3dTo2D(input3dPoints, calibInfo):
-    # input N, 3
-    T1 = calibInfo["Tr_array"]
-    T1 = np.concatenate((T1, np.array([0, 0, 0, 1]).reshape(1, 4)), axis=0)
-    T2 = np.concatenate((calibInfo["Rect0_array"], np.array([0, 0, 0]).reshape(1, 3)), axis=0)
-    T2 = np.concatenate((T2, np.array([0, 0, 0, 1]).reshape(4, 1)), axis=1)
-    P2 = calibInfo["P2_array"]
-
+def point3dToBev(input3dPoints):
     N = input3dPoints.shape[0]
-    print("N: %d"%N)
     ins = input3dPoints[:, 3].reshape(N, 1)
     input3dPoints = np.concatenate((input3dPoints[:, 0:3], np.ones(N).reshape(N, 1)), axis=1)
 
@@ -132,15 +124,57 @@ def point3dTo2D(input3dPoints, calibInfo):
     if zMax < zMin:
         zMax = zMin
 
+    trans_m = np.array([[1, 0, 0, 0],[0, 1, 0, 500],[0, 0, 1, 0],[0, 0, 0, 1]])
+    scale_m = np.array([[20, 0, 0, 0], [0, -20, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]])
+    temp_trans = np.dot(trans_m, scale_m)
+    R = (np.dot(temp_trans, input3dPoints.T).T)[:, 0:2]
 
+    R = np.concatenate((R, input3dPoints[:, 0:3]), axis=1)
+    R = np.concatenate((R, ins), axis=1)
+    return R
+
+def point3dTo2D(input3dPoints, calibInfo):
+    temp = []
+    for point in input3dPoints:
+        if point[0] >= 0:
+            temp.append(point)
+    N = len(temp)
+    input3dPoints = np.array(temp).reshape(N, 4)
+
+    # input N, 3
+    T1 = calibInfo["Tr_array"]
+    T1 = np.concatenate((T1, np.array([0, 0, 0, 1]).reshape(1, 4)), axis=0)
+    T2 = np.concatenate((calibInfo["Rect0_array"], np.array([0, 0, 0]).reshape(1, 3)), axis=0)
+    T2 = np.concatenate((T2, np.array([0, 0, 0, 1]).reshape(4, 1)), axis=1)
+    P2 = calibInfo["P2_array"]
+
+    N = input3dPoints.shape[0]
+    print("N: %d"%N)
+    ins = input3dPoints[:, 3].reshape(N, 1)
+    R = np.concatenate((input3dPoints[:, 0:3], np.ones(N).reshape(N, 1)), axis=1)
+
+    xMax = math.fabs(input3dPoints.max(axis=0)[0])
+    xMin = math.fabs(input3dPoints.min(axis=0)[0])
+    if xMax < xMin:
+        xMax = xMin
+
+    yMax = math.fabs(input3dPoints.max(axis=0)[1])
+    yMin = math.fabs(input3dPoints.min(axis=0)[1])
+    if yMax < yMin:
+        yMax = yMin
+
+    zMax = math.fabs(input3dPoints.max(axis=0)[2])
+    zMin = math.fabs(input3dPoints.min(axis=0)[2])
+    if zMax < zMin:
+        zMax = zMin
 
     R = np.dot(np.dot(np.dot(P2, T2), T1), input3dPoints.T).T
     R[:, [0]] /= R[:, [2]]
     R[:, [1]] /= R[:, [2]]
     R = np.delete(R, 2, axis=1)
-
     R = np.concatenate((R, input3dPoints[:, 0:3]), axis=1)
     R = np.concatenate((R, ins), axis=1)
+
     # output (N, 6) and (1, 3)
     # (x_2d y_2d x_3d y_3d z_3d ins) (x_max y_max z_max)
     maxValues = np.array([xMax, yMax, zMax])
@@ -148,6 +182,65 @@ def point3dTo2D(input3dPoints, calibInfo):
     resultMap["R"] = R
     resultMap["max"] = maxValues
     return resultMap
+
+def center3dToCorner(input3dBox):
+    R1 = input3dBox[0:3].reshape(1, 3)
+    R1 = R1.T
+    h = input3dBox[3]
+    w = input3dBox[4]
+    l = input3dBox[5]
+    r = angle_in_limit(-1 * input3dBox[6] - math.pi / 2)
+    T3 = np.array([
+        [-0.5 * l, -0.5 * l, 0.5 * l, 0.5 * l, -0.5 * l, -0.5 * l, 0.5 * l, 0.5 * l],
+        [0.5 * w, -0.5 * w, -0.5 * w, 0.5 * w, 0.5 * w, -0.5 * w, -0.5 * w, 0.5 * w],
+        [0, 0, 0, 0, h, h, h, h]
+    ])
+    T4 = np.array([
+        [math.cos(r), -1 * math.sin(r), 0],
+        [math.sin(r), math.cos(r), 0],
+        [0, 0, 1]
+    ])
+    T5 = np.tile(R1, 8)
+    T6 = (np.dot(T4, T3) + T5).T  # 8 corner-point's coordinates
+    return T6
+
+def boxes3dToBev(input3dBoxes):
+    # input N, 7
+    MeanVel2Cam = np.array(([
+        [7.49916597e-03, -9.99971248e-01, -8.65110297e-04, -6.71807577e-03],
+        [1.18652889e-02, 9.54520517e-04, -9.99910318e-01, -7.33152811e-02],
+        [9.99882833e-01, 7.49141178e-03, 1.18719929e-02, -2.78557062e-01],
+        [0, 0, 0, 1]
+    ]))
+    MeanRect0 = np.array(([
+        [0.99992475, 0.00975976, -0.00734152, 0],
+        [-0.0097913, 0.99994262, -0.00430371, 0],
+        [0.00729911, 0.0043753, 0.99996319, 0],
+        [0, 0, 0, 1]
+    ]))
+
+    N = input3dBoxes.shape[0]
+
+    xyz = input3dBoxes[:, 0:3]
+    xyz = np.concatenate((xyz, np.ones(N).reshape(N, 1)), axis=1)
+    xyz = np.dot(np.linalg.inv(MeanVel2Cam), np.dot(np.linalg.inv(MeanRect0), xyz.T)).T
+    input3dBoxes[:, 0:3] = xyz[:, 0:3]
+    boxes = []
+    # 1, 7
+    for input3dBox in input3dBoxes:
+        # 8, 3
+        corners = center3dToCorner(input3dBox)
+        # add one 1 col
+        corners = np.concatenate((corners, np.ones(8).reshape(8, 1)), axis=1)
+        # reverse y-coordinate
+        boxes.append(corners)
+    boxes = np.array(boxes).reshape(-1, 8, 4)
+    resBoxPoints = []
+    for box in boxes:
+        box = np.delete(box, [4, 5, 6, 7], axis=0)
+        for point in box:
+            resBoxPoints.append(point)
+    return point3dToBev(np.array(resBoxPoints).reshape(-1, 4))
 
 def boxes3dTo2D(input3dBoxes, calibInfo):
     # input N, 7
@@ -192,24 +285,7 @@ def boxes3dTo2D(input3dBoxes, calibInfo):
 
     boxes2D = []
     for box in res:
-        R1 = box[0:3].reshape(1, 3)
-        R1 = R1.T
-        h = box[3]
-        w = box[4]
-        l = box[5]
-        r = angle_in_limit(-1 * box[6] - math.pi / 2)
-        T3 = np.array([
-            [-0.5 * l, -0.5 * l, 0.5 * l, 0.5 * l, -0.5 * l, -0.5 * l, 0.5 * l, 0.5 * l],
-            [0.5 * w, -0.5 * w, -0.5 * w, 0.5 * w, 0.5 * w, -0.5 * w, -0.5 * w, 0.5 * w],
-            [0, 0, 0, 0, h, h, h, h]
-        ])
-        T4 = np.array([
-            [math.cos(r), -1 * math.sin(r), 0],
-            [math.sin(r), math.cos(r), 0],
-            [0, 0, 1]
-        ])
-        T5 = np.tile(R1, 8)
-        T6 = (np.dot(T4, T3) + T5).T    #8 corner-point's coordinates
+        T6 = center3dToCorner(box)
         T7 = np.concatenate((T6, np.ones((8, 1))), axis=1).T
         T8 = np.dot(np.dot(T2, T1), T7)
         T9 = np.dot(P2, T8).T
@@ -226,6 +302,8 @@ def visualization(calibProcessResult, imageProcessResult, labelProcessResult, po
     detection3dImg = imageProcessResult[0].copy()
     detection3dPointImg = imageProcessResult[0].copy()
     detection3dPointImg[:, :, :] = 0
+    detection3dBevImg = np.zeros((1000, 1000, 3))
+    detection3dBevImg[:, :, :] = 0
 
     label2d = labelProcessResult["label2d"]
     label3d = labelProcessResult["label3d"]
@@ -245,15 +323,22 @@ def visualization(calibProcessResult, imageProcessResult, labelProcessResult, po
         labels3d.append(np.array([x, y, z, h, w, l, r]))
     #N, 7  ->  N, 8, 2
     boxes2d = boxes3dTo2D(np.array(labels3d).reshape(-1, 7), calibProcessResult)
+    boxesBev = boxes3dToBev(np.array(labels3d).reshape(-1, 7))
+    boxesBev = np.delete(boxesBev, [2, 3, 4, 5], axis=1)
+    boxesBev = boxesBev.reshape(-1, 4, 2)
+    for box in boxesBev:
+        for i in range(4):
+            cv2.line(detection3dBevImg, (int(box[i][0]), int(box[i][1])), (int(box[(i + 1) % 4][0]), int(box[(i + 1) % 4][1])), (255, 0, 255), 2)
+
     for box in boxes2d:
         for i in range(4):
             cv2.line(detection3dImg, (int(box[i][0]), int(box[i][1])), (int(box[(i + 1) % 4][0]), int(box[(i + 1) % 4][1])), (255, 0, 255), 2)
             cv2.line(detection3dImg, (int(box[i][0]), int(box[i][1])), (int(box[i + 4][0]), int(box[i + 4][1])), (255, 0, 255), 2)
-            cv2.line(detection3dImg, (int(box[i + 4][0]), int(box[i + 4][1])), (int(box[i % 3 + 5][0]), int(box[i % 3 + 5][1])), (255, 0, 255), 2)
+            cv2.line(detection3dImg, (int(box[i + 4][0]), int(box[i + 4][1])), (int(box[(i + 1) % 4 + 4][0]), int(box[(i + 1) % 4 + 4][1])), (255, 0, 255), 2)
 
             cv2.line(detection3dPointImg, (int(box[i][0]), int(box[i][1])),(int(box[(i + 1) % 4][0]), int(box[(i + 1) % 4][1])), (255, 0, 255), 2)
             cv2.line(detection3dPointImg, (int(box[i][0]), int(box[i][1])), (int(box[i + 4][0]), int(box[i + 4][1])),(255, 0, 255), 2)
-            cv2.line(detection3dPointImg, (int(box[i + 4][0]), int(box[i + 4][1])),(int(box[i % 3 + 5][0]), int(box[i % 3 + 5][1])), (255, 0, 255), 2)
+            cv2.line(detection3dPointImg, (int(box[i + 4][0]), int(box[i + 4][1])),(int(box[(i + 1) % 4 + 4][0]), int(box[(i + 1) % 4 + 4][1])), (255, 0, 255), 2)
 
     resultMap = point3dTo2D(pointProcessResult, calibProcessResult)
     points2d = resultMap["R"]
@@ -264,11 +349,22 @@ def visualization(calibProcessResult, imageProcessResult, labelProcessResult, po
         if int(point2d[1]) >= 0 and int(point2d[1]) < h and int(point2d[0]) >=0 and int(point2d[0]) < w:
             #b,g,r
             detection3dPointImg[int(point2d[1])][int(point2d[0])][0] = 255 * (1 - point2d[5])
-            detection3dPointImg[int(point2d[1])][int(point2d[0])][1] = 128 * (1 - math.fabs(point2d[2]) / maxValue[0])
-            detection3dPointImg[int(point2d[1])][int(point2d[0])][2] = 255 * 1.2 * point2d[5]
+            detection3dPointImg[int(point2d[1])][int(point2d[0])][1] = 128
+            detection3dPointImg[int(point2d[1])][int(point2d[0])][2] = 255 * 1.5 * point2d[5]
+
+    points2d = point3dToBev(pointProcessResult)
+    for point2d in points2d:
+        w = detection3dBevImg.shape[1]
+        h = detection3dBevImg.shape[0]
+        if int(point2d[1]) >= 0 and int(point2d[1]) < h and int(point2d[0]) >= 0 and int(point2d[0]) < w:
+            # b,g,r
+            detection3dBevImg[int(point2d[1])][int(point2d[0])][0] = 1.0 * (1 - point2d[5])
+            detection3dBevImg[int(point2d[1])][int(point2d[0])][1] = 0.5
+            detection3dBevImg[int(point2d[1])][int(point2d[0])][2] = 0.2 * 1.5 * point2d[5]
     res.append(detection2dImg)
     res.append(detection3dImg)
     res.append(detection3dPointImg)
+    res.append(detection3dBevImg)
     return res
 
 kittiDataPath = "/home/jlurobot/Kitti/object/training"
@@ -293,7 +389,6 @@ if not (calibLenth == imageLenth == labelLenth == pointLenth):
 else:
     print("The amount of files is {0}".format(calibLenth))
 
-
 for index in range(calibLenth):
     calibFile = open(calibPath + "{number:06}.txt".format(number=index), "r")
     imageFile = cv2.imread(imagePath + "{number:06}.png".format(number=index))
@@ -313,7 +408,7 @@ for index in range(calibLenth):
     cv2.imshow("2D detection in img", visualizationResult[0])
     cv2.imshow("3D detection in img", visualizationResult[1])
     cv2.imshow("3D detection in points fv", visualizationResult[2])
-    #cv2.imshow("2D detection in points bev", visualizationResult[3])
+    cv2.imshow("3D detection in points bev", visualizationResult[3])
 
 
     calibFile.close()

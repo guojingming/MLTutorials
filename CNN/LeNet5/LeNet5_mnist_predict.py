@@ -5,7 +5,7 @@ import numpy as np
 import scipy.misc
 import cv2
 
-epoch_count = 40000
+epoch_count = 80000
 
 saver = tf.train.import_meta_graph("./checkpoint_dir/mnist_model{0}.meta".format(epoch_count))
 
