@@ -1,11 +1,11 @@
 import tensorflow as tf
-#from tensorflow.examples.tutorials.mnist import input_data
+# from tensorflow.examples.tutorials.mnist import input_data
 
 import numpy as np
 import scipy.misc
 import cv2
 
-epoch_count = 80000
+epoch_count = 20000
 
 saver = tf.train.import_meta_graph("./checkpoint_dir/mnist_model{0}.meta".format(epoch_count))
 
@@ -20,7 +20,7 @@ variable_names = [v.name for v in graph.get_operations()]
 predict_op = graph.get_tensor_by_name("predict:0")
 input_x = graph.get_tensor_by_name("input_x:0")
 
-#mnist = input_data.read_data_sets("./LeNet5/MNIST_data/", one_hot=True)
+# mnist = input_data.read_data_sets("./LeNet5/MNIST_data/", one_hot=True)
 
 cv2.namedWindow("Picture")
 

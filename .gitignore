@@ -1,2 +1,3 @@
 */__pycache__
 CNN/LeNet5/mnist_train_pic/*
+CNN/LeNet5/checkpoint_dir/*

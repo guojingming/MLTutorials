@@ -2,14 +2,18 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 from tensorflow.examples.tutorials.mnist import input_data
 
+
 def conv_2d(x, weight, padding):
     return tf.nn.conv2d(x, weight, strides=[1, 1, 1, 1], padding=padding)
+
 
 def max_pool_2x2(x, padding):
     return tf.nn.max_pool(x, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding=padding)
 
+
 def gen_weights(shape):
     return tf.Variable(tf.truncated_normal(shape=shape, stddev=0.1))
+
 
 def gen_bias(shape):
     return tf.Variable(tf.constant(0.1, shape=shape))
@@ -70,7 +74,7 @@ sess.run(tf.initialize_all_variables())
 
 saver = tf.train.Saver()
 
-epoch_count = 80000
+epoch_count = 20000
 
 for i in range(epoch_count):
     batch = mnist.train.next_batch(50)
@@ -82,9 +86,7 @@ for i in range(epoch_count):
         figure_y.append(train_accuacy)
         if i % 1000 == 0:
             plt.plot(figure_x, figure_y, "b--", linewidth=1)
-            plt.axis([0, epoch_count, 0, 1])
-            plt.show()
-    train_step.run(feed_dict = {input_x: batch[0], y_: batch[1]})
+    train_step.run(feed_dict={input_x: batch[0], y_: batch[1]})
 
 plt.plot(figure_x, figure_y, "b--", linewidth=1)
 plt.axis([0, epoch_count, 0, 1])
